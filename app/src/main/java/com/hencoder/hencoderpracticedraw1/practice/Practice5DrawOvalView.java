@@ -3,7 +3,7 @@ package com.hencoder.hencoderpracticedraw1.practice;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.os.Build;
+import android.graphics.RectF;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
@@ -30,9 +30,10 @@ public class Practice5DrawOvalView extends View {
 
         Paint paint = new Paint();
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            //left, top, right, bottom 是这个椭圆的左、上、右、下四个边界点的坐标
-            canvas.drawOval(50, 50, 150, 100, paint);
-        }
+
+        //left, top, right, bottom 是这个椭圆的左、上、右、下四个边界点的坐标
+        RectF rectF = new RectF(50, 50, 150, 100);
+        canvas.drawOval(rectF, paint);
+
     }
 }

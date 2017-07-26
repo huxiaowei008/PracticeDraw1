@@ -3,7 +3,7 @@ package com.hencoder.hencoderpracticedraw1.practice;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.os.Build;
+import android.graphics.RectF;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
@@ -30,8 +30,7 @@ public class Practice7DrawRoundRectView extends View {
         Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
         //left, top, right, bottom 是四条边的坐标，rx 和 ry 是圆角的横向半径和纵向半径。
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            canvas.drawRoundRect(100, 100, 500, 300, 50, 50, paint);
-        }
+        RectF rectF = new RectF(50, 50, 300, 200);
+        canvas.drawRoundRect(rectF, 30, 30, paint);
     }
 }
